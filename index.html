@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-6 bg-white rounded-lg shadow-md mt-10">
+        <h2 class="text-2xl font-semibold mb-6 text-gray-800 text-center">Expense Tracker</h2>
+        <form id="expenseForm" class="space-y-4">
+            
+            <select id="type" class="w-full p-2 border border-gray-300 rounded-md" required>
+                <option value="">Select Type</option>
+                <option value="Expense">Expense</option>
+                <option value="Income">Income</option>
+            </select>
+            <select id="category" class="w-full p-2 border border-gray-300 rounded-md" required>
+                <option value="">Select Category</option>
+            </select>
+            <input type="number" id="amount" placeholder="Amount" class="w-full p-2 border border-gray-300 rounded-md" required>
+            <input type="text" id="description" placeholder="Description" class="w-full p-2 border border-gray-300 rounded-md" required/>
+            <input type="submit" value="Add Entry" class="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 cursor-pointer">
+        </form>
+        <h3 class="text-xl font-semibold my-6 text-gray-800 text-center">Summary</h3>
+        <table id="entryTable" class="min-w-full bg-white border border-gray-200">
+            <thead class="bg-gray-100">
+                <tr>
+                    <th class="py-2 px-4 border-b border-gray-200">Description</th>
+                    <th class="py-2 px-4 border-b border-gray-200">Type</th>
+                    <th class="py-2 px-4 border-b border-gray-200">Category</th>
+                    <th class="py-2 px-4 border-b border-gray-200">Amount</th>
+                </tr>
+            </thead>
+            <tbody id="entryList" class="border-t border-gray-200">
+                <!-- Entries will be added here dynamically -->
+            </tbody>
+        </table>
+
+        <div class="totals mt-6">
+            <div id="totalIncome" class="text-lg font-semibold text-gray-800">Total Income: Rs 0.00</div>
+            <div id="totalExpense" class="text-lg font-semibold text-gray-800">Total Expense: Rs 0.00</div>
+            <div id="remainingBalance" class="text-lg font-semibold text-gray-800">Remaining Balance: Rs 0.00</div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
